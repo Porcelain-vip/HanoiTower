@@ -3,19 +3,19 @@ void hanoi(int, char, char, char);
 int main()
 {
 	int n;
-	std::cout << "ÇëÊäÈëÒªÒÆ¶¯µÄÔ²ÅÌ×ÜÊıÄ¿£º";
+	std::cout << "Please enter the plate you want to removeï¼š";
 	std::cin >> n;
 	hanoi(n, 'a', 'b', 'c');
-	std::cout << "×£ºØÄã£¬³É¹¦ÁË£¡" << std::endl;
+	std::cout << "Congratulationsï¼" << std::endl;
 	return 0;
 }
 void hanoi(int n, char a, char b, char c)
 {
-	if (n == 1) std::cout << "°Ñ±àºÅÎª " << n << " µÄÔ²ÅÌ´Ó " << a << " ÕëÒÆ¶¯µ½ " << c << " Õë" << std::endl;
+	if (n == 1) std::cout << "æŠŠç¼–å·ä¸º " << n << " çš„åœ†ç›˜ä» " << a << " é’ˆç§»åŠ¨åˆ° " << c << " é’ˆ" << std::endl;
 	else
 	{
 		hanoi(n - 1, a, c, b);
-		std::cout << "°Ñ±àºÅÎª " << n << " µÄÔ²ÅÌ´Ó " << a << " ÕëÒÆ¶¯µ½ " << c << " Õë" << std::endl;
+		std::cout << "æŠŠç¼–å·ä¸º " << n << " çš„åœ†ç›˜ä» " << a << " é’ˆç§»åŠ¨åˆ° " << c << " é’ˆ" << std::endl;
 		hanoi(n - 1, b, a, c);
 	}
 }
