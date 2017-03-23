@@ -1,21 +1,22 @@
 #include<iostream>
-void hanoi(int, char, char, char);
-int main()
-{
-	int n;
-	std::cout << "Please enter the plate you want to remove：";
-	std::cin >> n;
-	hanoi(n, 'a', 'b', 'c');
-	std::cout << "Congratulations！" << std::endl;
-	return 0;
-}
+using namespace std;
+
 void hanoi(int n, char a, char b, char c)
 {
-	if (n == 1) std::cout << "把编号为 " << n << " 的圆盘从 " << a << " 针移动到 " << c << " 针" << std::endl;
+	if (n == 1) cout << "Move " << n << " From " << a << " To " << c << endl;
 	else
 	{
 		hanoi(n - 1, a, c, b);
-		std::cout << "把编号为 " << n << " 的圆盘从 " << a << " 针移动到 " << c << " 针" << std::endl;
+		cout << "Move " << n << " From " << a << " To " << c << endl;
 		hanoi(n - 1, b, a, c);
 	}
+}
+
+int main()
+{
+	cout << "Please input the total number of plates: ";
+	int n; cin >> n;
+	hanoi(n, 'a', 'b', 'c');
+	cout << "Congratulations!" << endl;
+	return EXIT_SUCCESS;
 }
